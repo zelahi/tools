@@ -9,7 +9,7 @@ pull-image:  ## Pulls a specified public image: make pull-image IMAGE_NAME=cento
 	docker pull ${IMAGE_NAME} 
 
 run: ## Runs specified container: make run IMAGE_NAME=centos
-	 docker run --name $(CONTAINER_NAME) -it $(IMAGE_NAME)
+	 docker run -d --name $(CONTAINER_NAME) -it $(IMAGE_NAME)
 
 commit: ## Saves the docker image at a specific time: make commit CONTAINER_NAME=zetest
 	docker commit $(CONTAINER_NAME)

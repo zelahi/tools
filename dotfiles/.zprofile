@@ -13,4 +13,4 @@ alias drim='docker rmi'
 alias c='clear'
 alias h='history'
 
-
+alias aws-exec='aws-okta exec eng.core.developer'

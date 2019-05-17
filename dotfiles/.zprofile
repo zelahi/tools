@@ -1,7 +1,7 @@
 # Common git aliases
 alias gs='git status'
 alias ga='git add'
-alias gc='git commit'
+alias gc='git commit -S -m'
 
 # Docker aliases
 alias dps='docker ps'

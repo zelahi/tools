@@ -1,3 +1,6 @@
+# Useful environment variables
+export GPG_TTY=$(tty)
+
 # Common git aliases
 alias gs='git status'
 alias ga='git add'

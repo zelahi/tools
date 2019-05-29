@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Test ') {
+            steps {
+              script {
+                try {
+                  version = '17.06.2-ce'
+                  numericVersion = Double.parseDouble(version.split("-")[0])
+                  if ( numericVersion == 0.0 ||  numericVersion >= 18.09) {
+                    echo 'Numeric Version: ${numericVersion}'
+                  }
+                }
+                catch(Exception err) {
+                  throw err
+                }
+              }
+            }
+        }
+    }
+}

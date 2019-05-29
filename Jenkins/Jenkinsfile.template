@@ -1,3 +1,4 @@
+// Standard pipeline template w/ script to test number parsing
 pipeline {
     agent any
 
@@ -6,10 +7,13 @@ pipeline {
             steps {
               script {
                 try {
-                  version = '17.06.2-ce'
-                  numericVersion = Double.parseDouble(version.split("-")[0])
+                  version = '18.03.2-ce'
+                  versions = version.split('\\.')
+                  numericVersion = Double.parseDouble(versions[0] + '.' + versions[1])
+                  echo "Versions: ${versions}"
+                  echo "Outside if Numeric Version: ${numericVersion}"
                   if ( numericVersion == 0.0 ||  numericVersion >= 18.09) {
-                    echo 'Numeric Version: ${numericVersion}'
+                    echo "Inside if Numeric Version: ${numericVersion}"
                   }
                 }
                 catch(Exception err) {

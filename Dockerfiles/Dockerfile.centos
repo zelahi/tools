@@ -1,0 +1,20 @@
+FROM centos:7
+
+WORKDIR "/root/"
+RUN mkdir -p /centos/7/aarch64/edge && \
+    mkdir -p /centos/7/aarch64/nightly && \
+    mkdir -p /centos/7/aarch64/stable && \
+    mkdir -p /centos/7/aarch64/test
+
+RUN mkdir -p /centos/7/debug-aarch64/edge && \
+    mkdir -p /centos/7/debug-aarch64/nightly && \
+    mkdir -p /centos/7/debug-aarch64/stable && \
+    mkdir -p /centos/7/debug-aarch64/test
+
+
+RUN mkdir -p /centos/7/source/edge && \
+    mkdir -p /centos/7/source/nightly && \
+    mkdir -p /centos/7/source/stable && \
+    mkdir -p /centos/7/source/test
+
+CMD ["tal", "-f", "/dev/null"]

@@ -1,6 +1,9 @@
 FROM centos:7
 
 WORKDIR "/root/"
+
+RUN yum -y install vim
+
 RUN mkdir -p /centos/7/aarch64/edge && \
     mkdir -p /centos/7/aarch64/nightly && \
     mkdir -p /centos/7/aarch64/stable && \
@@ -17,4 +20,4 @@ RUN mkdir -p /centos/7/source/edge && \
     mkdir -p /centos/7/source/stable && \
     mkdir -p /centos/7/source/test
 
-CMD ["tal", "-f", "/dev/null"]
+CMD ["tail", "-f", "/dev/null"]

@@ -2,22 +2,26 @@ FROM centos:7
 
 WORKDIR "/root/"
 
+ENV REPO_FILE_DIR "/root"
+
 RUN yum -y install vim
 
-RUN mkdir -p /centos/7/aarch64/edge && \
-    mkdir -p /centos/7/aarch64/nightly && \
-    mkdir -p /centos/7/aarch64/stable && \
-    mkdir -p /centos/7/aarch64/test
+RUN mkdir -p centos/7/aarch64/edge && \
+    mkdir -p centos/7/aarch64/nightly && \
+    mkdir -p centos/7/aarch64/stable && \
+    mkdir -p centos/7/aarch64/test
 
-RUN mkdir -p /centos/7/debug-aarch64/edge && \
-    mkdir -p /centos/7/debug-aarch64/nightly && \
-    mkdir -p /centos/7/debug-aarch64/stable && \
-    mkdir -p /centos/7/debug-aarch64/test
+RUN mkdir -p centos/7/debug-aarch64/edge && \
+    mkdir -p centos/7/debug-aarch64/nightly && \
+    mkdir -p centos/7/debug-aarch64/stable && \
+    mkdir -p centos/7/debug-aarch64/test
 
 
-RUN mkdir -p /centos/7/source/edge && \
-    mkdir -p /centos/7/source/nightly && \
-    mkdir -p /centos/7/source/stable && \
-    mkdir -p /centos/7/source/test
+RUN mkdir -p centos/7/source/edge && \
+    mkdir -p centos/7/source/nightly && \
+    mkdir -p centos/7/source/stable && \
+    mkdir -p centos/7/source/test
+
+COPY gen-repo.sh /root/gen-repo.sh
 
 CMD ["tail", "-f", "/dev/null"]

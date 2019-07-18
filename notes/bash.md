@@ -16,6 +16,12 @@ Find all Debian packages in a repo
 find <path_to_dir> -type f -name "*.deb"
 ```
 
+Find all files and copy them to a directory
+```
+find {PATH_TO_SEARCH} -type f cp "{}" {DESTINATION_PATH} ";"
+
+```
+
 ## Docker Command Examples:
 Copy files from container to host
 ```

@@ -5,6 +5,7 @@ Search for text in a group of files:
 grep -r 'Some text' .
 ```
 
+
 ## Find:
 Find all directories in current repository
 ```
@@ -28,7 +29,7 @@ Copy files from container to host
 docker cp <container_id>:<path_to_dir> <path_to_dir>
 ```
 
-## Sed
+git branch | grep \* | cut -d ' ' -f2## Sed
 Strip all html elements from a list
 ```
 sed -e 's/<[^>]*>//g' -i <filename>
@@ -38,4 +39,12 @@ sed -e 's/<[^>]*>//g' -i <filename>
 Download files with a specific extension
 ```
 curl --silent --use-ascii --list-only https://download.docker.com/linux/static/stable/x86_64/ | grep .tgz
+```
+
+## Git
+Commands I use to extract info from git
+
+Extract current branch
+```
+git branch | grep \* | cut -d ' ' -f2
 ```

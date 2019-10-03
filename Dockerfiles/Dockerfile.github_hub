@@ -1,3 +1,4 @@
+# Taken from: https://github.com/tianon/dockerfiles/tree/master/github-hub
 FROM debian:stretch-slim
 
 RUN apt-get update \
